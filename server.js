@@ -5,11 +5,17 @@ var path = require('path');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 
-var defaultPath = path.resolve(__dirname, 'app', 'app.js');
+var defaultPath = path.join(path.resolve('.'), '/src/index.html');
 
 var compiler = webpack(webpackConfig)
 
 var port = 8000;
+
+app.use(function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader('Cache-Control', 'no-cache');
+  next();
+});
 
 app.use(require('webpack-dev-middleware')(compiler, {
 	noInfo: true, 

@@ -72,7 +72,7 @@ class MainContainer extends React.Component {
                 <header style={style.header}>
                     <Row style={{marginBottom: "0"}}>
                         <Col xs={4} md={4}>
-                            <Link to="/"><Image style={style.logo} src="../styles/finger-site-logo.png" /></Link>
+                            <Link to="/"><Image style={style.logo} src={require("../styles/finger-site-logo.png")} /></Link>
                         </Col>
                         <Col xs={8} md={8}>
                             <nav style={style.navContainer}>
